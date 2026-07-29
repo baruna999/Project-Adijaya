@@ -229,6 +229,19 @@ a {
 .row .col-md-4:nth-child(3) .feature-card,
 .row .col-md-4:nth-child(3) .signage-card { border-top-color: var(--accent); }
 
+/* 4 kolom layanan di beranda */
+.row .col-md-3:nth-child(1) .feature-card { border-top-color: var(--cmyk-c); }
+.row .col-md-3:nth-child(2) .feature-card { border-top-color: var(--cmyk-m); }
+.row .col-md-3:nth-child(3) .feature-card { border-top-color: var(--accent); }
+.row .col-md-3:nth-child(4) .feature-card { border-top-color: #22C55E; }
+
+/* Kartu fase pengerjaan */
+.service-phase-card {
+  background-color: #EEF2FF;
+  border: 1px solid #C7D2FE;
+  border-radius: var(--radius);
+}
+
 .feature-icon-box {
   width: 56px;
   height: 56px;
