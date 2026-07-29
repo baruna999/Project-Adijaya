@@ -1,0 +1,390 @@
+/* ===========================================================
+   style.css — Adijaya Solution
+   Clean & professional, dengan nuansa khas perusahaan percetakan
+   =========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --navy: #10203C;
+  --navy-dark: #0A1628;
+  --accent: #E4572E;   /* garis aksen oranye di bawah header */
+  --blue: #2563EB;
+  --blue-dark: #1E4FC4;
+  --bg: #F5F4EF;        /* warna hangat menyerupai kertas cetak */
+  --surface: #FFFFFF;
+  --text: #1F2937;
+  --muted: #6B7280;
+  --border: #E3E1D8;
+  --radius: 8px;
+
+  /* palet khas cetak CMYK, dipakai sebagai aksen dekoratif */
+  --cmyk-c: #00AEEF;
+  --cmyk-m: #EC008C;
+  --cmyk-y: #FFD400;
+  --cmyk-k: #111111;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: var(--text);
+  line-height: 1.6;
+
+  /* Tekstur halftone dot halus — khas hasil cetak offset/CMYK */
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(rgba(16, 32, 60, 0.05) 1px, transparent 1px),
+    radial-gradient(rgba(228, 87, 46, 0.045) 1px, transparent 1px);
+  background-size: 16px 16px, 16px 16px;
+  background-position: 0 0, 8px 8px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--blue);
+}
+
+/* ===== Garis identitas CMYK di paling atas halaman ===== */
+.cmyk-bar {
+  display: flex;
+  width: 100%;
+  height: 5px;
+}
+.cmyk-bar span { flex: 1 1 0; }
+.cmyk-bar .c { background-color: var(--cmyk-c); }
+.cmyk-bar .m { background-color: var(--cmyk-m); }
+.cmyk-bar .y { background-color: var(--cmyk-y); }
+.cmyk-bar .k { background-color: var(--cmyk-k); }
+
+/* ===== Header ===== */
+.header-top {
+  background-color: var(--navy);
+  color: #fff;
+}
+
+.header-top-inner {
+  padding: 18px 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.site-logo {
+  height: 42px;
+  width: auto;
+  border-radius: 4px;
+  background: #fff;
+  padding: 3px;
+}
+
+.site-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0;
+  color: #fff;
+}
+
+.site-subtitle {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.68);
+  margin: 0;
+}
+
+.site-nav {
+  background-color: var(--surface);
+  border-top: 3px solid var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding: 0;
+}
+
+.site-nav .navbar-toggler {
+  border: 1px solid var(--border);
+  margin: 10px 0;
+}
+
+.site-nav .navbar-toggler:focus {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+
+.site-nav .navbar-nav {
+  gap: 4px;
+}
+
+.site-nav .nav-link {
+  color: var(--text);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 16px 14px !important;
+  border-bottom: 3px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.site-nav .nav-link:hover {
+  color: var(--blue);
+}
+
+.site-nav .nav-link.active {
+  color: var(--blue);
+  font-weight: 600;
+  border-bottom-color: var(--blue);
+}
+
+/* ===== Hero Section — nuansa workshop percetakan ===== */
+.hero-section {
+  position: relative;
+  background:
+    linear-gradient(rgba(10, 22, 40, 0.90), rgba(10, 22, 40, 0.86)),
+    url('https://images.unsplash.com/photo-1629729802306-2c196946001a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+  color: #fff;
+  padding: 88px 0;
+}
+
+.hero-section h1 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.35rem;
+  margin-bottom: 18px;
+}
+
+.hero-section .lead {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.1rem;
+  max-width: 620px;
+  margin: 0 auto 28px auto;
+}
+
+.hero-section .btn-primary {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+
+.hero-section .btn-primary:hover {
+  background-color: #c94a26;
+  border-color: #c94a26;
+}
+
+.hero-section .btn-outline-secondary {
+  border-radius: var(--radius);
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff;
+  font-weight: 600;
+}
+
+.hero-section .btn-outline-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+  color: #fff;
+}
+
+/* ===== Section titles ===== */
+.section-title {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.section-subtitle {
+  color: var(--muted);
+}
+
+/* ===== Feature / Signage Cards ===== */
+.feature-card,
+.signage-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: none;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  height: 100%;
+}
+
+.feature-card:hover,
+.signage-card:hover {
+  transform: none;
+  box-shadow: 0 4px 14px rgba(16, 32, 60, 0.08);
+}
+
+/* Sentuhan identitas cetak: tiap kartu diberi warna atas berbeda */
+.row .col-md-4:nth-child(1) .feature-card,
+.row .col-md-4:nth-child(1) .signage-card { border-top-color: var(--cmyk-c); }
+
+.row .col-md-4:nth-child(2) .feature-card,
+.row .col-md-4:nth-child(2) .signage-card { border-top-color: var(--cmyk-m); }
+
+.row .col-md-4:nth-child(3) .feature-card,
+.row .col-md-4:nth-child(3) .signage-card { border-top-color: var(--accent); }
+
+.feature-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius);
+  background-color: #EEF2FF;
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin: 0 auto 16px auto;
+}
+
+.feature-card h3,
+.signage-card .card-title {
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.feature-card p,
+.signage-card .card-text {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* ===== About page ===== */
+.about-img {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: none;
+  max-width: 100%;
+}
+
+.text-justify {
+  text-align: left;
+}
+
+/* ===== Footer ===== */
+footer.site-footer {
+  background-color: var(--navy);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+footer.site-footer a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+}
+
+footer.site-footer a:hover {
+  color: #fff;
+}
+
+footer.site-footer hr {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== Tombol WhatsApp Melayang ===== */
+.wa-float {
+  position: fixed;
+  width: 56px;
+  height: 56px;
+  bottom: 28px;
+  right: 28px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 28px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.wa-float:hover {
+  background-color: #1ebe57;
+  color: #fff;
+}
+
+/* ===========================================================
+   Responsif — tampilan mobile/HP
+   =========================================================== */
+@media (max-width: 767.98px) {
+  .header-top-inner {
+    padding: 14px 0;
+    gap: 10px;
+  }
+
+  .site-logo {
+    height: 34px;
+  }
+
+  .site-title {
+    font-size: 1rem;
+  }
+
+  .site-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .site-nav .navbar-nav {
+    padding: 6px 0 12px 0;
+  }
+
+  .site-nav .nav-link {
+    padding: 10px 8px !important;
+    border-bottom: none;
+    border-left: 3px solid transparent;
+  }
+
+  .site-nav .nav-link.active {
+    border-left-color: var(--blue);
+    border-bottom-color: transparent;
+    background-color: #EEF2FF;
+  }
+
+  .hero-section {
+    padding: 48px 0;
+    text-align: center;
+  }
+
+  .hero-section h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-section .lead {
+    font-size: 1rem;
+  }
+
+  .hero-section .btn-lg {
+    width: 100%;
+    margin: 0 0 10px 0 !important;
+  }
+
+  .wa-float {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    bottom: 18px;
+    right: 18px;
+  }
+}
+
+.text-justify {
+  text-align: justify;
+  text-align-last: left;  
+  hyphens: auto;           
+}
+
+@media (max-width: 575.98px) {
+  .header-top-inner {
+    flex-wrap: wrap;
+  }
+}
